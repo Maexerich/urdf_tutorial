@@ -35,6 +35,24 @@
     <origin xyz="0 -0.22 0.25"/>
   </joint>
 
+  <link name="right_wheel">
+    <visual>
+      <geometry>
+        <cylinder length="0.08" radius="0.06"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="1.57075 0 0"/>
+      <!-- <material name="blue"/> -->
+    </visual>    
+  </link>
+
+  <joint name="right_leg_to_right_wheel" type="revolute">
+    <parent link="right_leg"/>
+    <child link="right_wheel"/>
+    <origin xyz="0 0 -0.6" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.57" upper="1.57" effort="10.0" velocity="1.0"/>
+  </joint>
+
   <link name="left_leg">
     <visual>
       <geometry>
