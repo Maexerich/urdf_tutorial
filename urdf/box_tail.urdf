@@ -24,16 +24,16 @@
       <material name="blue">
       </material>
     </visual>
-    <!-- <collision>
+    <collision>
       <geometry>
         <box size="1.3 0.4 0.4"/>
       </geometry>
     </collision>
     <inertial>
-      <mass value="1.0"/>
+      <mass value="50.0"/>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <inertia ixx="0.1" ixy="0.0" ixz="0.0" iyy="0.1" iyz="0.0" izz="0.1"/>
-    </inertial> -->
+    </inertial>
   </link>
 
   <!-- Joint between Box and Base_joint -->
@@ -55,25 +55,27 @@
       <material name="white">
       </material>
     </visual>
-    <!-- <collision>
+    <collision>
       <geometry>
-        <cylinder radius="0.1" length="2.0"/>
+        <cylinder radius="0.05" length="0.7"/>
       </geometry>
     </collision>
     <inertial>
-      <mass value="0.5"/>
+      <mass value="2.0"/>
       <origin xyz="0 0 0" rpy="0 0 0"/>
-      <inertia ixx="0.05" ixy="0.0" ixz="0.0" iyy="0.05" iyz="0.0" izz="0.05"/>
-    </inertial> -->
+      <!-- Inertia in x and y = 1/3mL**2 -->
+      <!-- Inertia in z = 1/2mr**2-->
+      <inertia ixx="0.327" ixy="0.0" ixz="0.0" iyy="0.327" iyz="0.0" izz="0.0025"/>
+    </inertial>
   </link>
 
   <!-- Joint between box and rod -->
-  <joint name="box_to_rod" type="revolute">
+  <joint name="box_to_rod" type="continuous">
     <parent link="box"/>
     <child link="rod"/>
     <origin xyz="-0.7 0 0" rpy="0 0 0"/>
     <axis xyz="1 0 0"/>
-    <limit lower="-1.57" upper="1.57" effort="10.0" velocity="1.0"/>    
+    <!-- <limit lower="-1.57" upper="1.57" effort="10.0" velocity="1.0"/> -->
   </joint>
 
   <!-- Actuator (if needed) -->
