@@ -63,9 +63,10 @@
     <inertial>
       <mass value="2.0"/>
       <origin xyz="0 0 0" rpy="0 0 0"/>
-      <!-- Inertia in x and y = 1/3mL**2 -->
-      <!-- Inertia in z = 1/2mr**2-->
-      <inertia ixx="0.327" ixy="0.0" ixz="0.0" iyy="0.327" iyz="0.0" izz="0.0025"/>
+      <!-- TODO: -->
+      <!-- Inertia in x and y = 1/12(3r**2+l**2) AHHH -->
+      <!-- Inertia in z = 1/2mr**2 should be fine-->
+      <inertia ixx="0.4975" ixy="0.0" ixz="0.0" iyy="0.4975" iyz="0.0" izz="0.0025"/>
     </inertial>
   </link>
 
